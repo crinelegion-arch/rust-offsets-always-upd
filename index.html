@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust Offsets - Always Updated</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-container">
+        <div class="dot-pattern"></div>
+        <div class="grid-pattern"></div>
+        <div class="hex-pattern"></div>
+        <div class="floating-elements" id="floating-elements"></div>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <span class="logo-icon">◉</span>
+                    <span class="logo-text">RUST.OFFSETS</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#offsets">Offsets</a></li>
+                    <li><a href="#decrypts">Decrypts</a></li>
+                    <li><a href="#updates">Updates</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">ALWAYS UPDATED</div>
+                <h1 class="hero-title">
+                    <span class="title-line">RUST</span>
+                    <span class="title-line">OFFSETS</span>
+                </h1>
+                <p class="hero-subtitle">Real-time memory offsets for Rust game development</p>
+                <div class="status-container">
+                    <div class="status-badge">
+                        <div class="status-dot"></div>
+                        <span>ONLINE</span>
+                    </div>
+                    <div class="version-badge">
+                        <span id="hero-version">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-grid">
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+            </div>
+        </section>
+
+        <section id="offsets" class="offsets-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>MEMORY OFFSETS</h2>
+                    <div class="update-info">
+                        <span class="update-time">Last updated: <span id="last-update">Loading...</span></span>
+                        <span class="game-version">Game version: <span id="game-version">Loading...</span></span>
+                        <span class="file-status" id="file-status">
+                            <span class="file-dot"></span>
+                            <span>off-decrypts.h</span>
+                        </span>
+                        <button class="refresh-btn" id="refresh-offsets" title="Reload offsets from off-decrypts.h">
+                            <span class="refresh-icon">⟳</span>
+                            REFRESH
+                        </button>
+                        <button class="download-btn" id="download-file" title="Download full off-decrypts.h file">
+                            <span class="download-icon">⬇</span>
+                            DOWNLOAD
+                        </button>
+                    </div>
+                </div>
+
+                <div class="offsets-container">
+                    <div class="offset-category" data-category="player">
+                        <div class="category-header">
+                            <h3>PLAYER</h3>
+                            <span class="category-count">4</span>
+                        </div>
+                        <div class="offset-grid">
+                            <div class="offset-item">
+                                <span class="offset-name">BasePlayer</span>
+                                <code class="offset-value">0x10BA8C40</code>
+                            </div>
+                            <div class="offset-item">
+                                <span class="offset-name">PlayerModel</span>
+                                <code class="offset-value">0x18</code>
+                            </div>
+                            <div class="offset-item">
+                                <span class="offset-name">PlayerInput</span>
+                                <code class="offset-value">0x4C8</code>
+                            </div>
+                            <div class="offset-item">
+                                <span class="offset-name">Health</span>
+                                <code class="offset-value">0x1F0</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="offset-category" data-category="world">
+                        <div class="category-header">
+                            <h3>WORLD</h3>
+                            <span class="category-count">4</span>
+                        </div>
+                        <div class="offset-grid">
+                            <div class="offset-item">
+                                <span class="offset-name">GameObjectManager</span>
+                                <code class="offset-value">0x17FFD28</code>
+                            </div>
+                            <div class="offset-item">
+                                <span class="offset-name">TaggedObjects</span>
+                                <code class="offset-value">0x10</code>
+                            </div>
+                            <div class="offset-item">
+                                <span class="offset-name">Transform</span>
+                                <code class="offset-value">0x30</code>
+                            </div>
+                            <div class="offset-item">
+                                <span class="offset-name">Position</span>
+                                <code class="offset-value">0x90</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="offset-category" data-category="weapon">
+                        <div class="category-header">
+                            <h3>WEAPON</h3>
+                            <span class="category-count">4</span>
+                        </div>
+                        <div class="offset-grid">
+                            <div class="offset-item">
+                                <span class="offset-name">BaseProjectile</span>
+                                <code class="offset-value">0x2B8</code>
+                            </div>
+                            <div class="offset-item">
+                                <span class="offset-name">Recoil</span>
+                                <code class="offset-value">0x2F8</code>
+                            </div>
+                            <div class="offset-item">
+                                <span class="offset-name">Automatic</span>
+                                <code class="offset-value">0x2C1</code>
+                            </div>
+                            <div class="offset-item">
+                                <span class="offset-name">Aimcone</span>
+                                <code class="offset-value">0x2E8</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="offset-category" data-category="camera">
+                        <div class="category-header">
+                            <h3>CAMERA</h3>
+                            <span class="category-count">3</span>
+                        </div>
+                        <div class="offset-grid">
+                            <div class="offset-item">
+                                <span class="offset-name">MainCamera</span>
+                                <code class="offset-value">0x10BA8D20</code>
+                            </div>
+                            <div class="offset-item">
+                                <span class="offset-name">ViewMatrix</span>
+                                <code class="offset-value">0x2E4</code>
+                            </div>
+                            <div class="offset-item">
+                                <span class="offset-name">FOV</span>
+                                <code class="offset-value">0x40</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="decrypts" class="decrypts-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>DECRYPT FUNCTIONS</h2>
+                    <div class="decrypt-info">
+                        <span class="decrypt-count">Functions: <span id="decrypt-count">Loading...</span></span>
+                        <span class="decrypt-status">
+                            <span class="decrypt-dot"></span>
+                            <span>Auto-generated</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="decrypts-container">
+                    <div class="decrypt-category">
+                        <div class="category-header">
+                            <h3>ENTITY DECRYPTS</h3>
+                            <span class="category-count" id="entity-decrypt-count">3</span>
+                        </div>
+                        <div class="decrypt-grid" id="entity-decrypts">
+                            <!-- Decrypts will be loaded here -->
+                        </div>
+                    </div>
+
+                    <div class="decrypt-category">
+                        <div class="category-header">
+                            <h3>ITEM DECRYPTS</h3>
+                            <span class="category-count" id="item-decrypt-count">1</span>
+                        </div>
+                        <div class="decrypt-grid" id="item-decrypts">
+                            <!-- Decrypts will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="updates" class="updates-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>UPDATE LOG</h2>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">05.12.2024</div>
+                        <div class="timeline-content">
+                            <h4>Patch 2024.12.05.1 Update</h4>
+                            <ul>
+                                <li>Updated Player memory offsets</li>
+                                <li>Fixed Camera ViewMatrix calculations</li>
+                                <li>Added new Weapon offset patterns</li>
+                                <li>Improved stability for GameObjectManager</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">28.11.2024</div>
+                        <div class="timeline-content">
+                            <h4>Major System Overhaul</h4>
+                            <ul>
+                                <li>Redesigned website interface</li>
+                                <li>Implemented automatic update checking</li>
+                                <li>Enhanced offset validation system</li>
+                                <li>Added real-time status monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">15.11.2024</div>
+                        <div class="timeline-content">
+                            <h4>Performance Improvements</h4>
+                            <ul>
+                                <li>Optimized memory scanning algorithms</li>
+                                <li>Reduced false positive detection</li>
+                                <li>Added backup offset validation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>CONTACT & SUPPORT</h2>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">@</div>
+                        <h3>EMAIL</h3>
+                        <p>Unknown</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">#</div>
+                        <h3>DISCORD</h3>
+                        <p>countercultism</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">!</div>
+                        <h3>TELEGRAM</h3>
+                        <p>Unknown</p>
+                    </div>
+                </div>
+                
+                <div class="disclaimer">
+                    <div class="disclaimer-header">
+                        <span class="warning-icon">⚠</span>
+                        <h3>DISCLAIMER</h3>
+                    </div>
+                    <p>These memory offsets are provided for educational and development purposes only. Usage that violates game terms of service may result in account suspension. We are not affiliated with Facepunch Studios.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <span class="logo-icon">◉</span>
+                        <span>RUST.OFFSETS</span>
+                    </div>
+                    <p>Always updated memory offsets</p>
+                </div>
+                <div class="footer-right">
+                    <p>&copy; 2024 All rights reserved</p>
+                    <p>Not affiliated with Facepunch Studios</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
